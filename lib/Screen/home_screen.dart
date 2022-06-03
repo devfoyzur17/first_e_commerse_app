@@ -216,15 +216,15 @@ class HomeScreen extends StatelessWidget {
             //todo This is Recomended Item section
 
             Container(
-              height: 600,
+              height: 500,
               child: GridView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  padding: EdgeInsets.all(10),
+               
                   itemCount: recomendedItemData.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      childAspectRatio: 3 / 5,
+                      childAspectRatio: 3 / 4,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10),
                   itemBuilder: (context, index) => RecomendedSingleItem(

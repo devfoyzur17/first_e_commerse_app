@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 
 import 'Screen/home_screen.dart';
+import 'widget/bottom_navigation_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "My first e commerse app",
-      home: HomeScreen(),
+      home: BottomNavBar(),
 
     );
     
