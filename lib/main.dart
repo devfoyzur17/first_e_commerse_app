@@ -16,8 +16,27 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MaterialApp(
+      
       debugShowCheckedModeBanner: false,
       title: "My first e commerse app",
+        theme: ThemeData(
+           
+          
+          
+          fontFamily: 'Quicksand',
+
+          //shadowColor: Color(0xffff80ff),
+          cardTheme: CardTheme(shadowColor: Color(0xffff80ff)),
+           
+           
+          textTheme: TextTheme(
+            titleMedium: TextStyle(
+                color: Colors.black,
+                fontFamily: 'Lato',
+                fontWeight: FontWeight.bold),
+ 
+
+          ),),
       home: BottomNavBar(),
 
     );

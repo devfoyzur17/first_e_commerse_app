@@ -3,7 +3,9 @@
 
 import 'package:bottom_bar/bottom_bar.dart';
 import 'package:first_e_commerse_app/Screen/home_screen.dart';
-import 'package:flutter/material.dart';  
+import 'package:flutter/material.dart';
+
+import '../Screen/favorite_screen.dart';  
 
 class BottomNavBar extends StatefulWidget {
     BottomNavBar({Key? key}) : super(key: key);
@@ -24,7 +26,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         controller: _pageController,
         children: [
           HomeScreen(),
-          Container(color: Colors.red),
+          FavoriteScreen(),
           Container(color: Colors.greenAccent.shade700),
           Container(color: Colors.orange),
         ],

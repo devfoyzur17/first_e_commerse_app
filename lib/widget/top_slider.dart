@@ -34,7 +34,7 @@ class TopSlider extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Image.asset(
-                  'assets/image/b.png',
+                  'assets/image/b.jpg',
                   fit: BoxFit.fill,
                 ),
               ),

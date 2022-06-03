@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MainAppBar("Delivery to  ˅", "lekki phase 1, Estate"),
+      appBar: MainAppBar("Delivery to ⌄", "lekki phase 1, Estate"),
       drawer: Drawer(),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 15),
