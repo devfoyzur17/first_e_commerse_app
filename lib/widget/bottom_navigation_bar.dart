@@ -5,6 +5,7 @@ import 'package:bottom_bar/bottom_bar.dart';
 import 'package:first_e_commerse_app/Screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../Screen/category_brand_screen.dart';
 import '../Screen/favorite_screen.dart';  
 
 class BottomNavBar extends StatefulWidget {
@@ -27,7 +28,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         children: [
           HomeScreen(),
           FavoriteScreen(),
-          Container(color: Colors.greenAccent.shade700),
+          CategoryBrandScreen(),
           Container(color: Colors.orange),
         ],
         onPageChanged: (index) {

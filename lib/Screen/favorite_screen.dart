@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:first_e_commerse_app/widget/app_drawer.dart';
 import 'package:flutter/material.dart';
 
 import '../data/recomended_item_data.dart';
@@ -20,14 +21,19 @@ class FavoriteScreen extends StatelessWidget {
           "Favorite",
           style: TextStyle(color: Colors.black),
         )),
+        leading: Builder(builder: (context)=> IconButton(onPressed: (){
+          Scaffold.of(context).openDrawer();
+        }, icon: Icon(Icons.notes_outlined))),
         actions: [
           IconButton(
-              onPressed: () {}, icon: Icon(Icons.notifications_outlined,))
+              onPressed: () {},
+              icon: Icon(
+                Icons.notifications_outlined,
+              ))
         ],
       ),
-      drawer: Container(
-        
-        child: Drawer()),
+      // ignore: avoid_unnecessary_containers
+      drawer: AppDrawer(),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 15),
         height: double.infinity,
