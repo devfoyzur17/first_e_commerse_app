@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:first_e_commerse_app/data/menu_item_data.dart';
+import 'package:first_e_commerse_app/widget/app_drawer.dart';
 import 'package:first_e_commerse_app/widget/mainAppBar.dart';
 import 'package:first_e_commerse_app/widget/menu_single_item.dart';
 import 'package:first_e_commerse_app/widget/top_slider.dart';
@@ -20,7 +21,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MainAppBar("Delivery to ⌄", "lekki phase 1, Estate"),
-      drawer: Drawer(),
+      drawer: AppDrawer(),
+       
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 15),
         child: ListView(
