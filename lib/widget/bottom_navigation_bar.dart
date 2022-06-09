@@ -1,7 +1,8 @@
 
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:bottom_bar/bottom_bar.dart';
+import 'package:first_e_commerse_app/Screen/cart_screen.dart';
 import 'package:first_e_commerse_app/Screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +30,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           HomeScreen(),
           FavoriteScreen(),
           CategoryBrandScreen(),
-          Container(color: Colors.orange),
+          CartScreen(),
         ],
         onPageChanged: (index) {
           // Use a better state management solution
