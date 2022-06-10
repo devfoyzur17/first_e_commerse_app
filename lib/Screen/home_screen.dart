@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
+import 'package:first_e_commerse_app/Screen/recomended.dart';
 import 'package:first_e_commerse_app/data/menu_item_data.dart';
 import 'package:first_e_commerse_app/widget/app_drawer.dart';
 import 'package:first_e_commerse_app/widget/mainAppBar.dart';
@@ -8,7 +9,7 @@ import 'package:first_e_commerse_app/widget/top_slider.dart';
 import 'package:flutter/material.dart';
 import '../data/category_item_data.dart';
 import '../data/recomended_item_data.dart';
-import '../data/week_promotion_data.dart'; 
+import '../data/week_promotion_data.dart';
 import '../widget/category_single_item.dart';
 import '../widget/recomended_single_Item.dart';
 import '../widget/week_promotion_single_item.dart';
@@ -17,26 +18,13 @@ import 'menu_screen.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
- Widget CategoryHeaderTitle( String title, BuildContext context ){
-
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-
-      Text(title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-      TextButton(onPressed: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MenuScreen()));
-      }, child: Text("View all >>"))
-    ],
-  );
-}
+   
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MainAppBar("Delivery to ⌄", "lekki phase 1, Estate"),
       drawer: AppDrawer(),
-       
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 15),
         child: ListView(
@@ -46,7 +34,21 @@ class HomeScreen extends StatelessWidget {
             TopSlider(),
 
             //todo This is menu section
-            CategoryHeaderTitle("Menu",context),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Menu",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => MenuScreen()));
+                    },
+                    child: Text("View all >>"))
+              ],
+            ),
 
             //todo This is menu product section
             Container(
@@ -54,9 +56,12 @@ class HomeScreen extends StatelessWidget {
               child: ListView.builder(
                   itemCount: menuItemData.take(5).length,
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => MenuSingleItem(
-                        menuIcon: menuItemData[index].image,
-                        menuTitle: menuItemData[index].title,
+                  itemBuilder: (context, index) => Padding(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: MenuSingleItem(
+                          menuIcon: menuItemData[index].image,
+                          menuTitle: menuItemData[index].title,
+                        ),
                       )),
             ),
 
@@ -227,7 +232,21 @@ class HomeScreen extends StatelessWidget {
                         image: categoryItemData[index].image,
                         title: categoryItemData[index].title))),
 
-            CategoryHeaderTitle("Recomended",context),
+             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Recomended",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => RecomendedScreen()));
+                    },
+                    child: Text("View all >>"))
+              ],
+            ),
 
             //todo This is Recomended Item section
 
@@ -236,8 +255,7 @@ class HomeScreen extends StatelessWidget {
               child: GridView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-               
-                  itemCount: recomendedItemData.length,
+                  itemCount: recomendedItemData.take(4).length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       childAspectRatio: 3 / 4,

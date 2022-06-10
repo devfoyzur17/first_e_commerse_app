@@ -20,7 +20,7 @@ class AppDrawer extends StatelessWidget {
           children: [
             Container(
               margin: EdgeInsets.only(top: 20),
-              height: 50,
+              height: 20,
               alignment: Alignment.centerLeft,
               child: IconButton(
                   onPressed: () {

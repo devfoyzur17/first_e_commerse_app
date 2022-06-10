@@ -11,22 +11,34 @@ class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-      ),
-
-      body: GridView.builder(
-        
-        
-        padding: EdgeInsets.symmetric(horizontal: 5),
-      itemCount: menuItemData.length,
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        mainAxisSpacing: 20,
-        childAspectRatio: 1/2,
-
-            maxCrossAxisExtent: 100, mainAxisExtent: 100, crossAxisSpacing: 0),
-        itemBuilder: (context, index) =>MenuSingleItem(menuIcon: menuItemData[index].image, menuTitle: menuItemData[index].title)
-            )
-    );
+        appBar: AppBar(
+          backgroundColor: Colors.white10,
+          elevation: 0,
+          iconTheme: IconThemeData(color: Colors.black54),
+          title: Center(
+              child: Text(
+            "Favorite",
+            style: TextStyle(color: Colors.black),
+          )),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.notifications_outlined,
+                ))
+          ],
+        ),
+        body: GridView.builder(
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            itemCount: menuItemData.length,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                mainAxisSpacing: 20,
+                childAspectRatio: 1 / 1.5,
+                mainAxisExtent: 100,
+                crossAxisSpacing: 20,
+                crossAxisCount: 4),
+            itemBuilder: (context, index) => MenuSingleItem(
+                menuIcon: menuItemData[index].image,
+                menuTitle: menuItemData[index].title)));
   }
 }

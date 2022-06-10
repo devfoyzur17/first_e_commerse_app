@@ -17,7 +17,7 @@ class _MenuSingleItemState extends State<MenuSingleItem> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
-      margin: EdgeInsets.only(right: 20),
+     // margin: EdgeInsets.only(right: 20),
       height: 75,
       width: 78,
       child: Container(
