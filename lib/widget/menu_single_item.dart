@@ -16,12 +16,12 @@ class _MenuSingleItemState extends State<MenuSingleItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
-     // margin: EdgeInsets.only(right: 20),
+      padding: EdgeInsets.all(7),
+      
       height: 75,
       width: 78,
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.all(7),
 
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

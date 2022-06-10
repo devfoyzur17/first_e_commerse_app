@@ -17,7 +17,7 @@ class MenuScreen extends StatelessWidget {
           iconTheme: IconThemeData(color: Colors.black54),
           title: Center(
               child: Text(
-            "Favorite",
+            "Menu",
             style: TextStyle(color: Colors.black),
           )),
           actions: [
@@ -32,10 +32,10 @@ class MenuScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             itemCount: menuItemData.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisSpacing: 20,
+                mainAxisSpacing: 15,
                 childAspectRatio: 1 / 1.5,
                 mainAxisExtent: 100,
-                crossAxisSpacing: 20,
+                crossAxisSpacing: 15,
                 crossAxisCount: 4),
             itemBuilder: (context, index) => MenuSingleItem(
                 menuIcon: menuItemData[index].image,
