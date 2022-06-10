@@ -8,14 +8,28 @@ import 'package:first_e_commerse_app/widget/top_slider.dart';
 import 'package:flutter/material.dart';
 import '../data/category_item_data.dart';
 import '../data/recomended_item_data.dart';
-import '../data/week_promotion_data.dart';
-import '../widget/category_header.dart';
+import '../data/week_promotion_data.dart'; 
 import '../widget/category_single_item.dart';
 import '../widget/recomended_single_Item.dart';
 import '../widget/week_promotion_single_item.dart';
+import 'menu_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+ Widget CategoryHeaderTitle( String title, BuildContext context ){
+
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+
+      Text(title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+      TextButton(onPressed: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MenuScreen()));
+      }, child: Text("View all >>"))
+    ],
+  );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -32,13 +46,13 @@ class HomeScreen extends StatelessWidget {
             TopSlider(),
 
             //todo This is menu section
-            CategoryHeaderTitle("Menu"),
+            CategoryHeaderTitle("Menu",context),
 
             //todo This is menu product section
             Container(
               height: 100,
               child: ListView.builder(
-                  itemCount: menuItemData.length,
+                  itemCount: menuItemData.take(5).length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => MenuSingleItem(
                         menuIcon: menuItemData[index].image,
@@ -213,7 +227,7 @@ class HomeScreen extends StatelessWidget {
                         image: categoryItemData[index].image,
                         title: categoryItemData[index].title))),
 
-            CategoryHeaderTitle("Recomended"),
+            CategoryHeaderTitle("Recomended",context),
 
             //todo This is Recomended Item section
 
