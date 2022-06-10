@@ -1,81 +1,103 @@
+// ignore_for_file: prefer_const_constructors
 
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-import 'package:bottom_bar/bottom_bar.dart';
 import 'package:first_e_commerse_app/Screen/cart_screen.dart';
+import 'package:first_e_commerse_app/Screen/category_brand_screen.dart';
+import 'package:first_e_commerse_app/Screen/favorite_screen.dart';
 import 'package:first_e_commerse_app/Screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../Screen/category_brand_screen.dart';
-import '../Screen/favorite_screen.dart';  
-
 class BottomNavBar extends StatefulWidget {
-    BottomNavBar({Key? key}) : super(key: key);
+  const BottomNavBar({Key? key}) : super(key: key);
 
   @override
-  State<BottomNavBar> createState() => _BottomNavBarState();
+  _BottomNavBarState createState() => _BottomNavBarState();
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-    int _currentPage = 0;
+  List<IconData> navbarIcons = [
+    Icons.home,
+    Icons.favorite,
+    Icons.shop_two_sharp,
+    Icons.shopping_cart_outlined
+  ];
+  List widgets = <Widget>[
+    HomeScreen(),
+    FavoriteScreen(),
+    CategoryBrandScreen(),
+    CartScreen()
+  ];
 
-  final _pageController = PageController();
+  List<String> bottomNavigationName = ['Home', 'Favorite', 'Category', 'Cart'];
+
+  List<Color> color = [
+    Colors.blue,
+    Colors.orange,
+    Colors.green,
+    Colors.red,
+  ];
+
+  List<Color> colorShade = [
+    Colors.blue.shade100,
+    Colors.orange.shade100,
+    Colors.green.shade100,
+    Colors.red.shade100,
+  ];
+
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
- return   Scaffold(
-      body: PageView(
-        controller: _pageController,
-        children: [
-          HomeScreen(),
-          FavoriteScreen(),
-          CategoryBrandScreen(),
-          CartScreen(),
-        ],
-        onPageChanged: (index) {
-          // Use a better state management solution
-          // setState is used for simplicity
-          setState(() => _currentPage = index);
-        },
-      ),
+    return Scaffold(
+      body: widgets[selectedIndex],
       bottomNavigationBar: Container(
+        padding: EdgeInsets.only(bottom: 12, left: 12, right: 12, top: 6),
+        height: 60,
         decoration: BoxDecoration(
-          color: Colors.white,
-          
-
-          border: Border.all(color: Colors.white54,width: 1),
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-        ),
-        child: BottomBar(
-          
-          
-          selectedIndex: _currentPage,
-          onTap: (int index) {
-            _pageController.jumpToPage(index);
-            setState(() => _currentPage = index);
-          },
-          items: <BottomBarItem>[
-            BottomBarItem(
-              icon: Icon(Icons.home),
-              title: Text('Home'),
-              activeColor: Colors.blue,
-            ),
-            BottomBarItem(
-              icon: Icon(Icons.favorite),
-              title: Text('Favorites'),
-              activeColor: Colors.red,
-            ),
-            BottomBarItem(
-              icon: Icon(Icons.shopping_bag),
-              title: Text('Category'),
-              activeColor: Colors.greenAccent.shade700,
-            ),
-            BottomBarItem(
-              icon: Icon(Icons.shopping_cart_outlined),
-              title: Text('Cart'),
-              activeColor: Colors.orange,
-            ),
-          ],
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: navbarIcons.map(
+            (e) {
+              int i = navbarIcons.indexOf(e);
+              return AnimatedContainer(
+                duration: Duration(milliseconds: 200),
+                padding: EdgeInsets.all(8),
+                height: 40,
+                decoration: BoxDecoration(
+                  color: i == selectedIndex ? colorShade[i] : Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                        child: Icon(
+                          e,
+                          size: 25,
+                          color: i == selectedIndex
+                              ? color[i]
+                              : Colors.blueGrey[300],
+                        ),
+                        onTap: () {
+                          selectedIndex = i;
+                          setState(() {});
+                        }),
+                    (i == selectedIndex)
+                        ? Container(
+                            padding: EdgeInsets.symmetric(horizontal: 4.0),
+                            child: Text(bottomNavigationName[i],
+                                style: TextStyle(
+                                    color: color[i],
+                                    fontWeight: FontWeight.bold)))
+                        : Container(),
+                  ],
+                ),
+              );
+            },
+          ).toList(),
         ),
       ),
     );
