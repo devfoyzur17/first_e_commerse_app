@@ -1,5 +1,7 @@
  
-class CategoryBrandModel{
+import 'package:flutter/cupertino.dart';
+
+class CategoryBrandModel with ChangeNotifier{
   final String image;
   final String brandName;
 

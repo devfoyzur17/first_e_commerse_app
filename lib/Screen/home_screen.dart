@@ -1,15 +1,17 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, unused_local_variable
 
 import 'package:first_e_commerse_app/Screen/recomended.dart';
-import 'package:first_e_commerse_app/data/menu_item_data.dart';
+import 'package:first_e_commerse_app/provider/model/recomended_data_model.dart'; 
 import 'package:first_e_commerse_app/widget/app_drawer.dart';
 import 'package:first_e_commerse_app/widget/mainAppBar.dart';
 import 'package:first_e_commerse_app/widget/menu_single_item.dart';
 import 'package:first_e_commerse_app/widget/top_slider.dart';
 import 'package:flutter/material.dart';
-import '../data/category_item_data.dart';
-import '../data/recomended_item_data.dart';
-import '../data/week_promotion_data.dart';
+import 'package:provider/provider.dart'; 
+import '../provider/data/category_item_data.dart';
+import '../provider/data/menu_item_data.dart';
+import '../provider/data/recomended_item_data.dart';
+import '../provider/data/week_promotion_data.dart';
 import '../widget/category_single_item.dart';
 import '../widget/recomended_single_Item.dart';
 import '../widget/week_promotion_single_item.dart';
@@ -22,6 +24,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+   final menuData = Provider.of<MenuItems>(context);
+   final weekPromotionData = Provider.of<WeekPromotionItems>(context);
+   final categoryData = Provider.of<CategoryItems>(context);
+   final recomendedData = Provider.of<RecomendedItems>(context);
+
     return Scaffold(
       appBar: MainAppBar("Delivery to ⌄", "lekki phase 1, Estate"),
       drawer: AppDrawer(),
@@ -54,13 +62,13 @@ class HomeScreen extends StatelessWidget {
             Container(
               height: 100,
               child: ListView.builder(
-                  itemCount: menuItemData.take(5).length,
+                  itemCount: menuData.menuItemData.take(5).length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => Padding(
                         padding: const EdgeInsets.only(right: 20),
                         child: MenuSingleItem(
-                          menuIcon: menuItemData[index].image,
-                          menuTitle: menuItemData[index].title,
+                          menuIcon: menuData.menuItemData[index].image,
+                          menuTitle: menuData.menuItemData[index].title
                         ),
                       )),
             ),
@@ -84,11 +92,11 @@ class HomeScreen extends StatelessWidget {
             Container(
                 height: 160,
                 child: ListView.builder(
-                    itemCount: weekPromotionData.length,
+                    itemCount: weekPromotionData.weekPromotionItems.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) => WeekPromotionSingleItem(
-                        image: weekPromotionData[index].image,
-                        productTitle: weekPromotionData[index].title))),
+                        image: weekPromotionData.weekPromotionItems[index].image,
+                        productTitle: weekPromotionData.weekPromotionItems[index].title))),
 
             SizedBox(
               height: 20,
@@ -226,11 +234,11 @@ class HomeScreen extends StatelessWidget {
             Container(
                 height: 150,
                 child: ListView.builder(
-                    itemCount: categoryItemData.length,
+                    itemCount: categoryData.categoryItems.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) => CategorySingleItem(
-                        image: categoryItemData[index].image,
-                        title: categoryItemData[index].title))),
+                        image:  categoryData.categoryItems[index].image,
+                        title: categoryData.categoryItems[index].title))),
 
              Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -255,16 +263,16 @@ class HomeScreen extends StatelessWidget {
               child: GridView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  itemCount: recomendedItemData.take(4).length,
+                  itemCount: recomendedData.recomendedItems.take(4).length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       childAspectRatio: 3 / 4,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10),
                   itemBuilder: (context, index) => RecomendedSingleItem(
-                      image: recomendedItemData[index].image,
-                      title: recomendedItemData[index].title,
-                      price: recomendedItemData[index].price)),
+                      image: recomendedData.recomendedItems[index].image,
+                      title: recomendedData.recomendedItems[index].title,
+                      price: recomendedData.recomendedItems[index].price)),
             )
           ],
         ),

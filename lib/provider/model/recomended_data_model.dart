@@ -1,5 +1,7 @@
  
-class RecomendedItemModel{
+import 'package:flutter/cupertino.dart';
+
+class RecomendedItemModel with ChangeNotifier{
 
   final String image;
   final String title;

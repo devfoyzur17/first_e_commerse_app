@@ -1,10 +1,12 @@
 
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-import 'package:first_e_commerse_app/data/category_brand_data.dart';
+ 
 import 'package:first_e_commerse_app/widget/app_drawer.dart';
 import 'package:first_e_commerse_app/widget/category_brand_single_item.dart';
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
+
+import '../provider/data/category_brand_data.dart';
+ 
 
 class CategoryBrandScreen extends StatelessWidget {
   const CategoryBrandScreen({Key? key}) : super(key: key);

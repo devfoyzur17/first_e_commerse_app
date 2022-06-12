@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
-
-import '../data/recomended_item_data.dart';
+import 'package:provider/provider.dart';
+ 
+import '../provider/data/recomended_item_data.dart';
 import '../widget/recomended_single_Item.dart'; 
 
 class RecomendedScreen extends StatelessWidget {
@@ -10,6 +11,7 @@ class RecomendedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        final recomendedData = Provider.of<RecomendedItems>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white10,
@@ -35,16 +37,16 @@ class RecomendedScreen extends StatelessWidget {
       body:  GridView.builder(
         padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
                    
-                  itemCount: recomendedItemData.length,
+                  itemCount: recomendedData.recomendedItems.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       childAspectRatio: 3 / 4,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10),
                   itemBuilder: (context, index) => RecomendedSingleItem(
-                      image: recomendedItemData[index].image,
-                      title: recomendedItemData[index].title,
-                      price: recomendedItemData[index].price)),
+                      image: recomendedData.recomendedItems[index].image,
+                      title: recomendedData.recomendedItems[index].title,
+                      price: recomendedData.recomendedItems[index].price)),
     );
   }
 }

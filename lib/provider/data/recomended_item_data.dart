@@ -1,8 +1,13 @@
- 
+  
 
-import 'package:first_e_commerse_app/model/recomended_data_model.dart';
+// ignore_for_file: prefer_final_fields
 
-List<RecomendedItemModel> recomendedItemData =[
+import 'package:flutter/cupertino.dart';
+
+import '../model/recomended_data_model.dart';
+
+class RecomendedItems with ChangeNotifier{
+  List<RecomendedItemModel> _recomendedItemData =[
   RecomendedItemModel(image: "assets/image/recomended1.png", title: "Lather Ledis Bag jksdh sudhf usdf sjdf dhusfa usdf sudhyfl      sae", price: "\$299"),
   RecomendedItemModel(image: "assets/image/recomended2.png", title: "Nike Air Max 270 ", price: "\$780"),
   RecomendedItemModel(image: "assets/image/recomended3.png", title: "Jens Sirt", price: "\$450"),
@@ -16,3 +21,9 @@ List<RecomendedItemModel> recomendedItemData =[
   RecomendedItemModel(image: "assets/image/recomended11.png", title: "Gaming chair", price: "\$5500"),
   RecomendedItemModel(image: "assets/image/recomended12.png", title: "DRLS Camera Nickon", price: "\$80000"),
 ];
+
+List<RecomendedItemModel> get recomendedItems{
+  return [..._recomendedItemData];
+}
+
+}

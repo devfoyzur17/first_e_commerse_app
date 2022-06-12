@@ -1,6 +1,7 @@
-
-import 'package:first_e_commerse_app/model/category_brand_model.dart';
+ 
 import 'package:flutter/foundation.dart';
+
+import '../model/category_brand_model.dart';
 
 List<CategoryBrandModel> categoryBrandData=[
   CategoryBrandModel(image: "assets/brand/nike.jpg", brandName: "Nike Sport"),

@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, library_private_types_in_public_api
  
 import 'package:flutter/material.dart';
-
-import '../data/recomended_item_data.dart';
+import 'package:provider/provider.dart';
+ 
+import '../provider/data/recomended_item_data.dart';
 import '../widget/recomended_single_Item.dart';
 
 class SingleCategoryBrandScreen extends StatefulWidget {
@@ -15,7 +16,8 @@ class _SingleCategoryBrandScreenState extends State<SingleCategoryBrandScreen> {
  
   @override
   Widget build(BuildContext context) {
-   
+           final recomendedData = Provider.of<RecomendedItems>(context);
+
 
     return Scaffold(
       body: SafeArea(
@@ -64,16 +66,16 @@ class _SingleCategoryBrandScreenState extends State<SingleCategoryBrandScreen> {
             shrinkWrap: true,
             // physics: NeverScrollableScrollPhysics(),
 
-            itemCount: recomendedItemData.length,
+            itemCount: recomendedData.recomendedItems.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 3 / 4,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10),
             itemBuilder: (context, index) => RecomendedSingleItem(
-                image: recomendedItemData[index].image,
-                title: recomendedItemData[index].title,
-                price: recomendedItemData[index].price)),
+                image: recomendedData.recomendedItems[index].image,
+                title: recomendedData.recomendedItems[index].title,
+                price: recomendedData.recomendedItems[index].price)),
       ),
         ),
       ),
