@@ -4,6 +4,7 @@
 import 'package:first_e_commerse_app/widget/app_drawer.dart';
 import 'package:first_e_commerse_app/widget/category_brand_single_item.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../provider/data/category_brand_data.dart';
  
@@ -13,6 +14,7 @@ class CategoryBrandScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categoryBrandData = Provider.of<CategoryBrandItems>(context);
 
     return Scaffold(
      appBar: AppBar(
@@ -41,8 +43,8 @@ class CategoryBrandScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 15),
         height: 800,
         child: ListView.builder(
-          itemCount: categoryBrandData.length,
-          itemBuilder: ((context, index) =>  CategoryBrandSingleItem(image: categoryBrandData[index].image, brandName: categoryBrandData[index].brandName)),
+          itemCount: categoryBrandData.categoryBrandItems.length,
+          itemBuilder: ((context, index) =>  CategoryBrandSingleItem(image: categoryBrandData.categoryBrandItems[index].image, brandName: categoryBrandData.categoryBrandItems[index].brandName, id: categoryBrandData.categoryBrandItems[index].id,)),
     ),
       ),
       );

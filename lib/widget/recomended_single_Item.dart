@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -34,9 +34,15 @@ class RecomendedSingleItem extends StatelessWidget {
               height: 130,
               width: double.maxFinite,
               alignment: Alignment.center,
-              child: Image.asset(
-                image,
-                fit: BoxFit.fill,
+              child: Container(
+                height: 100,
+                width: 100,
+                 
+                child: Image.asset(
+                  
+                  image,
+                  fit: BoxFit.scaleDown,
+                ),
               ),
               decoration: BoxDecoration(
                 color: Color(0xffe6e6e6),
