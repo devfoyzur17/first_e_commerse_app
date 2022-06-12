@@ -8,12 +8,14 @@ class CartSingleItem extends StatefulWidget {
   @override
   State<CartSingleItem> createState() => _CartSingleItemState();
 }
-  int cart_item =0;
+
 
 class _CartSingleItemState extends State<CartSingleItem> {
-  
+     int cart_item =0;
   @override
   Widget build(BuildContext context) {
+   
+  
   
     return Card(
       elevation: 2,
