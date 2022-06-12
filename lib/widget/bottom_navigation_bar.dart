@@ -62,7 +62,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             (e) {
               int i = navbarIcons.indexOf(e);
               return AnimatedContainer(
-                duration: Duration(milliseconds: 200),
+                duration: Duration(milliseconds: 50),
                 padding: EdgeInsets.all(8),
                 height: 40,
                 decoration: BoxDecoration(

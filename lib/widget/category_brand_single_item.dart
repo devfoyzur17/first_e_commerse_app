@@ -1,4 +1,7 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: prefer_const_constructors
+
+import 'package:first_e_commerse_app/Screen/single_category_brand_screen.dart';
+ 
 import 'package:flutter/material.dart'; 
 
 class CategoryBrandSingleItem extends StatelessWidget {
@@ -10,7 +13,9 @@ class CategoryBrandSingleItem extends StatelessWidget {
   Widget build(BuildContext context) {
     
     return InkWell(
-      onTap: (){},
+      onTap: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SingleCategoryBrandScreen()));
+      },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10),
         child: Stack(

@@ -3,7 +3,7 @@
 import 'package:first_e_commerse_app/model/recomended_data_model.dart';
 
 List<RecomendedItemModel> recomendedItemData =[
-  RecomendedItemModel(image: "assets/image/recomended1.png", title: "Lather Ledis Bag", price: "\$299"),
+  RecomendedItemModel(image: "assets/image/recomended1.png", title: "Lather Ledis Bag jksdh sudhf usdf sjdf dhusfa usdf sudhyfl      sae", price: "\$299"),
   RecomendedItemModel(image: "assets/image/recomended2.png", title: "Nike Air Max 270 ", price: "\$780"),
   RecomendedItemModel(image: "assets/image/recomended3.png", title: "Jens Sirt", price: "\$450"),
   RecomendedItemModel(image: "assets/image/recomended4.png", title: "Gold nekles women", price: "\$30000"),

@@ -66,9 +66,11 @@ class RecomendedSingleItem extends StatelessWidget {
         //start text Widgets
 
         Expanded(
-          flex: 2,
+          flex: 1,
           child: Text(
             title,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
             style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
           ),
         ),
