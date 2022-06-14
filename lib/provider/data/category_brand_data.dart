@@ -49,154 +49,141 @@ class CategoryBrandItems with ChangeNotifier {
       
     ),
     CategoryBrandModel(
-      imageHeader: "assets/image/nike_sport/nikeheader.jpg",
+      imageHeader: "assets/image/sony/sonyheader.jpg",
       image: "assets/brand/sony.jpg",
       brandName: "Sony Tech",
       id: 'cb2',
       singleCategoryItemList: [
         RecomendedItemModel(
-            image: "assets/image/recomended1.png",
+            image: "assets/image/sony/sony1.png",
             title:
-                "Lather Ledis Bag jksdh sudhf usdf sjdf dhusfa usdf sudhyfl      sae",
-            price: "\$299"),
+                "Sony Mobile PHB78 ",
+            price: "\$150"),
         RecomendedItemModel(
-            image: "assets/image/recomended2.png",
-            title: "Nike Air Max 270 ",
+            image: "assets/image/sony/sony2.png",
+            title: "Camera HGS93",
             price: "\$780"),
         RecomendedItemModel(
-            image: "assets/image/recomended2.png",
-            title: "Jens Sirt",
+            image: "assets/image/sony/sony3.png",
+            title: "Watch Digital",
             price: "\$450"),
         RecomendedItemModel(
-            image: "assets/image/recomended3.png",
-            title: "Gold nekles women",
+            image: "assets/image/sony/sony4.png",
+            title: "Wifi Router",
             price: "\$30000"),
         RecomendedItemModel(
-            image: "assets/image/recomended5.png",
-            title: "Men Watch ",
+            image: "assets/image/sony/sony5.png",
+            title: "AirPod Headphone ",
             price: "\$1200"),
         RecomendedItemModel(
-            image: "assets/image/recomended6.png",
-            title: "Mens Panjabi Easy",
+           image: "assets/image/sony/sony6.png",
+            title: "Smart Phone J27",
             price: "\$1800"),
-        RecomendedItemModel(
-            image: "assets/image/recomended7.png",
-            title: "Wairless Mouse",
-            price: "\$999"),
+         
       ],
       
     ),
     CategoryBrandModel(
-      imageHeader: "assets/image/nike_sport/nikeheader.jpg",
+      imageHeader: "assets/image/samsung/samsungheader.jpg",
       image: "assets/brand/samsung.jpg",
       brandName: "Samsung",
       id: 'cb3',
       singleCategoryItemList: [
         RecomendedItemModel(
-            image: "assets/image/recomended1.png",
+            image: "assets/image/samsung/samsung1.png",
             title:
                 "Lather Ledis Bag jksdh sudhf usdf sjdf dhusfa usdf sudhyfl      sae",
             price: "\$299"),
         RecomendedItemModel(
-            image: "assets/image/recomended2.png",
+            image: "assets/image/samsung/samsung2.png",
             title: "Nike Air Max 270 ",
             price: "\$780"),
         RecomendedItemModel(
-            image: "assets/image/recomended3.png",
+            image: "assets/image/samsung/samsung3.png",
             title: "Jens Sirt",
             price: "\$450"),
         RecomendedItemModel(
-            image: "assets/image/recomended4.png",
+            image: "assets/image/samsung/samsung4.png",
             title: "Gold nekles women",
             price: "\$30000"),
         RecomendedItemModel(
-            image: "assets/image/recomended5.png",
+            image: "assets/image/samsung/samsung5.png",
             title: "Men Watch ",
             price: "\$1200"),
         RecomendedItemModel(
-            image: "assets/image/recomended6.png",
+            image: "assets/image/samsung/samsung6.png",
             title: "Mens Panjabi Easy",
             price: "\$1800"),
-        RecomendedItemModel(
-            image: "assets/image/recomended7.png",
-            title: "Wairless Mouse",
-            price: "\$999"),
+        
       ],
       
     ),
     CategoryBrandModel(
-      imageHeader: "assets/image/nike_sport/nikeheader.jpg",
+      imageHeader: "assets/image/suprime/suprimeheader.jpg",
       image: "assets/brand/suprim.jpg",
       brandName: "Suprime",
       id: 'cb4',
       singleCategoryItemList: [
         RecomendedItemModel(
-            image: "assets/image/recomended1.png",
+            image: "assets/image/suprime/suprime1.png",
             title:
                 "Lather Ledis Bag jksdh sudhf usdf sjdf dhusfa usdf sudhyfl      sae",
             price: "\$299"),
         RecomendedItemModel(
-            image: "assets/image/recomended2.png",
+            image: "assets/image/suprime/suprime2.png",
             title: "Nike Air Max 270 ",
             price: "\$780"),
         RecomendedItemModel(
-            image: "assets/image/recomended3.png",
+            image: "assets/image/suprime/suprime3.png",
             title: "Jens Sirt",
             price: "\$450"),
         RecomendedItemModel(
-            image: "assets/image/recomended4.png",
+            image: "assets/image/suprime/suprime4.png",
             title: "Gold nekles women",
             price: "\$30000"),
         RecomendedItemModel(
-            image: "assets/image/recomended5.png",
+            image: "assets/image/suprime/suprime5.png",
             title: "Men Watch ",
             price: "\$1200"),
         RecomendedItemModel(
-            image: "assets/image/recomended6.png",
+            image: "assets/image/suprime/suprime6.png",
             title: "Mens Panjabi Easy",
             price: "\$1800"),
-        RecomendedItemModel(
-            image: "assets/image/recomended7.png",
-            title: "Wairless Mouse",
-            price: "\$999"),
+         
       ],
       
     ),
     CategoryBrandModel(
-      imageHeader: "assets/image/nike_sport/nikeheader.jpg",
+      imageHeader: "assets/image/prada/pradaheader.jpg",
       image: "assets/brand/prada.jpg",
       brandName: "Prada",
       id: 'cb5',
       singleCategoryItemList: [
         RecomendedItemModel(
-            image: "assets/image/recomended1.png",
+            image: "assets/image/prada/prada1.png",
             title:
                 "Lather Ledis Bag jksdh sudhf usdf sjdf dhusfa usdf sudhyfl      sae",
             price: "\$299"),
         RecomendedItemModel(
-            image: "assets/image/recomended2.png",
+            image: "assets/image/prada/prada2.png",
             title: "Nike Air Max 270 ",
             price: "\$780"),
         RecomendedItemModel(
-            image: "assets/image/recomended3.png",
+            image: "assets/image/prada/prada3.png",
             title: "Jens Sirt",
             price: "\$450"),
         RecomendedItemModel(
-            image: "assets/image/recomended4.png",
+            image: "assets/image/prada/parada4.png",
             title: "Gold nekles women",
             price: "\$30000"),
         RecomendedItemModel(
-            image: "assets/image/recomended5.png",
+            image: "assets/image/prada/parada5.png",
             title: "Men Watch ",
             price: "\$1200"),
         RecomendedItemModel(
-            image: "assets/image/recomended6.png",
+            image: "assets/image/prada/parada6.png",
             title: "Mens Panjabi Easy",
             price: "\$1800"),
-        RecomendedItemModel(
-            image: "assets/image/recomended7.png",
-            title: "Wairless Mouse",
-            price: "\$999"),
       ],
       
     ),

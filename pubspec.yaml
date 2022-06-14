@@ -65,6 +65,10 @@ flutter:
   assets:
     - assets/image/
     - assets/image/nike_sport/
+    - assets/image/suprime/
+    - assets/image/samsung/
+    - assets/image/prada/
+    - assets/image/sony/
     - assets/image_icon/
     - assets/brand/
   #   - images/a_dot_ham.jpeg
