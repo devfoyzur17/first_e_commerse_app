@@ -26,5 +26,9 @@ List<RecomendedItemModel> get recomendedItems{
   return [..._recomendedItemData];
 }
 
+List<RecomendedItemModel> get favouriteItems{
+  return _recomendedItemData.where((element) => element.isFavourite).toList();
+}
+
 
 }

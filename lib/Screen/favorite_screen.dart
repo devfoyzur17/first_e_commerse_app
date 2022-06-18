@@ -3,7 +3,6 @@
 import 'package:first_e_commerse_app/widget/app_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
- 
 import '../provider/data/recomended_item_data.dart';
 import '../widget/recomended_single_Item.dart';
 
@@ -41,18 +40,18 @@ class FavoriteScreen extends StatelessWidget {
         height: double.infinity,
         child: GridView.builder(
             shrinkWrap: true,
-            // physics: NeverScrollableScrollPhysics(),
+            // physics: NeverScrollableScrollPhysics(),   
 
-            itemCount: recomendedData.recomendedItems.length,
+            itemCount: recomendedData.favouriteItems.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 3 / 4,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10),
             itemBuilder: (context, index) => ChangeNotifierProvider.value(value: recomendedData.recomendedItems[index], child: RecomendedSingleItem(
-                image: recomendedData.recomendedItems[index].image,
-                title: recomendedData.recomendedItems[index].title,
-                price: recomendedData.recomendedItems[index].price),)),
+                image: recomendedData.favouriteItems[index].image,
+                title: recomendedData.favouriteItems[index].title,
+                price: recomendedData.favouriteItems[index].price),)),
       ),
     );
   }

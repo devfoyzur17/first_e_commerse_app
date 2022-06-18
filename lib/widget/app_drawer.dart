@@ -34,7 +34,7 @@ class AppDrawer extends StatelessWidget {
                 currentAccountPicture: ClipRRect(
                   borderRadius: BorderRadius.circular(100),
                   child: Image.asset(
-                    "assets/image/user_profile.jpg",
+                    "assets/image/profile.jpg",
                     fit: BoxFit.cover,
                   ),
                 ),

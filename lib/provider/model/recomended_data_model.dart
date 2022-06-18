@@ -14,7 +14,8 @@ class RecomendedItemModel with ChangeNotifier {
 
 
       void toggoleFavouriteStatus(){
-        isFavourite = !isFavourite;
+        
+        isFavourite =! isFavourite;
          notifyListeners();
       }
 }
