@@ -44,6 +44,7 @@ class RecomendedScreen extends StatelessWidget {
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10),
                   itemBuilder: (context, index) => RecomendedSingleItem(
+                
                       image: recomendedData.recomendedItems[index].image,
                       title: recomendedData.recomendedItems[index].title,
                       price: recomendedData.recomendedItems[index].price)),

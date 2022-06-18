@@ -269,10 +269,12 @@ class HomeScreen extends StatelessWidget {
                       childAspectRatio: 3 / 4,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10),
-                  itemBuilder: (context, index) => RecomendedSingleItem(
+                  itemBuilder: (context, index) => ChangeNotifierProvider.value(value: recomendedData.recomendedItems[index], child: RecomendedSingleItem(
                       image: recomendedData.recomendedItems[index].image,
                       title: recomendedData.recomendedItems[index].title,
-                      price: recomendedData.recomendedItems[index].price)),
+                      price: recomendedData.recomendedItems[index].price),)
+              
+                  ),
             )
           ],
         ),

@@ -26,4 +26,5 @@ List<RecomendedItemModel> get recomendedItems{
   return [..._recomendedItemData];
 }
 
+
 }

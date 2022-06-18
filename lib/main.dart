@@ -5,6 +5,7 @@ import 'package:first_e_commerse_app/provider/data/category_item_data.dart';
 import 'package:first_e_commerse_app/provider/data/recomended_item_data.dart';
 import 'package:first_e_commerse_app/provider/data/week_promotion_data.dart';
 import 'package:first_e_commerse_app/provider/model/category_brand_model.dart';
+import 'package:first_e_commerse_app/provider/model/recomended_data_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'provider/data/menu_item_data.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context)=> WeekPromotionItems()),
         ChangeNotifierProvider(create: (context)=> CategoryItems()),
         ChangeNotifierProvider(create: (context)=> RecomendedItems()),
-        ChangeNotifierProvider(create: (context)=> CategoryBrandItems()),
+         ChangeNotifierProvider(create: (context)=> CategoryBrandItems()),
          
         
       ],

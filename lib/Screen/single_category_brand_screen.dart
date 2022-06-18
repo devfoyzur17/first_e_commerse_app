@@ -75,10 +75,10 @@ class _SingleCategoryBrandScreenState extends State<SingleCategoryBrandScreen> {
                     childAspectRatio: 3 / 4,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10),
-                itemBuilder: (context, index) => RecomendedSingleItem(
+                itemBuilder: (context, index) => ChangeNotifierProvider.value(value: loaderProduct.singleCategoryItemList[index], child: RecomendedSingleItem(
                     image: loaderProduct.singleCategoryItemList[index].image,
                     title: loaderProduct.singleCategoryItemList[index].title,
-                    price: loaderProduct.singleCategoryItemList[index].price)),
+                    price: loaderProduct.singleCategoryItemList[index].price),)),
           ),
         ),
       ),
