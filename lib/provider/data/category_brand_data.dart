@@ -194,4 +194,5 @@ class CategoryBrandItems with ChangeNotifier {
    CategoryBrandModel findById(var id) {
     return _categoryBrandData.firstWhere((element) => element.id == id);
   }
+ 
 }
